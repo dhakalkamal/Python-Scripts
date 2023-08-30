@@ -7,6 +7,13 @@ directory = 'sales-customerid'
 # Directory to check for subdirectories
 check_directory = 'sales-customerid/specfictimesofvisits/sexageofvisitor/uniqueidofproductbought'
 
+# Get list of all subdirectories and subsubdirectories in base_directory
+sub_directories = [x[0] for x in os.walk(base_directory)]
+
+# Remove the base_directory from the list
+sub_directories = sub_directories[1:]
+
+
 # Get all subdirectories and subsubdirectories in check_directory
 subdirs = [x[0] for x in os.walk(check_directory)]
 
